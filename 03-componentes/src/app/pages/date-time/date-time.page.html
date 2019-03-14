@@ -1,0 +1,15 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime
+        [monthShortNames]="meses_short" 
+        cancel-text="cancelar" 
+        done-text="ok">
+    </ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>

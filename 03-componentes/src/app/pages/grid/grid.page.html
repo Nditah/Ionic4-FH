@@ -1,0 +1,29 @@
+<app-header titulo="Grid Row"></app-header>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col 
+        size-lg="3"
+        size-md="4"
+        size-sm="6"
+        size-xs="12"
+        *ngFor="let c of [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <ion-card>
+          <ion-img src="/assets/shapes.svg"></ion-img>
+          <ion-card-header>
+            <ion-card-title>Titulo</ion-card-title>
+            <ion-card-subtitle>Subtitulo</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Voluptas at autem debitis inventore ipsa provident natus,
+             similique deleniti mollitia et nobis culpa id aliquam quis illum.
+              Dignissimos labore veritatis fugit.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from "../../services/noticias.service";
-import { Article } from 'src/app/interfaces/interfaces';
+import { Article } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-tab1',
@@ -16,6 +16,18 @@ export class Tab1Page implements OnInit {
   ngOnInit(){
     this.noticiasService.getTopHeadlines().subscribe(resp=>{
       this.noticias.push(...resp.articles);
+    });
+  }
+
+  loadData(event){
+    this.noticiasService.getTopHeadlines().subscribe(resp=>{
+      if(resp.articles.length==0){
+        event.target.disabled = true;
+        event.target.complete();
+      }else{
+        this.noticias.push(...resp.articles);
+        event.target.complete();
+      }
     });
   }
 }
